@@ -1,15 +1,19 @@
 import React from 'react'
+import { ArrowRight } from 'lucide-react';
 
 
-const Card = () => {
+const Card = (card) => {
   return (
     <div className='  bg-gray-600 rounded-2xl h-full w-80 relative overflow-hidden '>
-        <img className='rounded-lg h-full w-full object-cover ' src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmVzc2lvbmFsJTIwbWFufGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400' alt="" />
+      <img className='rounded-lg h-full w-full object-cover ' src={card.image} alt="" />
 
-        <div className='absolute bottom-0 left-0 right-0 top-0 [background-color:#00000050] text-white p-4'>
-          <h3 className='text-lg font-bold'>Card Title</h3>
-          <p className='text-sm'>Card description goes here.</p>
+      <div className='absolute bottom-0 left-0 right-0 top-0 [background-color:#00000050] text-white p-4 justify-between flex flex-col'>
+        <h3 className=' text-lg font-semibold text-black hover:text-white hover:bg-black bg-white h-7 w-7 rounded-full pl-2.5'>{card.id}</h3>
+        <div className="">
+          <p className='text-sm p-6'>{card.description}</p>
+          <button className='bg-blue-500 text-white rounded-full py-2 cursor-pointer px-5 ml-6 flex hover:bg-green-400 hover:text-black transition-all'>Read More <span className='pl-5 cursor-pointer hover:animate-pulse'><ArrowRight  /></span></button>
         </div>
+      </div>
     </div>
   )
 }
