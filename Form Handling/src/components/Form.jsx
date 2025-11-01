@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 // ✅ 1️⃣ Define Yup Schema
+
 const schema = yup.object({
   email: yup
     .string()
