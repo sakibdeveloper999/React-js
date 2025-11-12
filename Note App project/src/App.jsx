@@ -51,15 +51,18 @@ const App = () => {
         </form>
         <div className='lg:w-1/2 lg:flex lg:flex-col p-10 lg:border-l-2 bg-black'>
           <h1 className='text-4xl font-bold'>Recent Note</h1>
-          <div className="flex flex-wrap gap-5 mt-6 h-full overflow-auto">
-            {task.map(function (note,idx) {
+          <div className="flex flex-wrap items-start justify-start gap-5 mt-6 h-full overflow-auto">
+            {task.map(function (note, idx) {
 
               return <div key={idx} className="h-52 w-40 rounded-xl bg-white text-black p-2">
-                <h3 className='font-bold'>{note.title}</h3>
-                <p>{note.details}</p>
-                 </div> 
+                <div className='flex items-center gap-4 mb-2'>
+                  <h3 className='font-bold'>{note.title}</h3>
+                  <div className='h-2 w-2 bg-black ml-22'></div>
+                </div>
+                <p className='font-medium text-sm '>{note.details}</p>
+              </div>
             })}
-            
+
           </div>
         </div>
       </div>
