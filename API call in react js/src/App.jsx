@@ -8,8 +8,6 @@ const App = () => {
     <>
       <div className="">
         <div className=" ">
-          <Home/>
-          <TodoApp/>
           <Api/>
         </div>
       </div>

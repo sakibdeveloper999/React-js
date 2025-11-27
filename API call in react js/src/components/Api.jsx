@@ -1,5 +1,7 @@
 import { AudioWaveform } from 'lucide';
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios';
+
 
 const Api = () => {
 
@@ -18,34 +20,47 @@ const Api = () => {
 
 
         // You can show all user data to the console this way
+
         data.forEach(user => {
             console.log(
-              `Name: ${user.name}, Id: ${user.id}, Username: ${user.username},  Email:  ${user.email} , `
+                `Name: ${user.name}, Id: ${user.id}, Username: ${user.username},  Email:  ${user.email} , `
             );
         });
     }
 
 
-    
+
     // API calling use Axios 
-    const getDataTow = () => {
+    const [dataTow, setDataTow] = useState([])
+
+    const getDataTow = async () => {
+        const responseTow = await axios.get('https://picsum.photos/v2/list');
+
+        setDataTow(responseTow.data)
+        console.log(dataTow);
 
     }
 
     return (
         <div>
-            <button 
-            className='m-auto px-5 py-2 bg-gray-500 text-green-600 rounded-2xl' 
-            onClick={getData}
+            <button
+                className='m-5 px-5 py-2 bg-gray-500 font-bold text-green-600 rounded-2xl'
+                onClick={getData}
             >
                 Get Data Fetch
             </button>
-            <button 
-            className='m-auto px-5 py-2 bg-gray-500 text-green-600 rounded-2xl' 
-            onClick={getDataTow}
+            <button
+                className=' px-5 py-2 bg-gray-500 font-bold text-green-600 rounded-2xl'
+                onClick={getDataTow}
             >
                 Get Data Axios
             </button>
+            {/* this div show if you click the "Get Data Axios "  */}
+            <div className="axiosApi">
+                {dataTow.map(function(elem, idx){
+                    return <h3>hello {elem.author} {idx}</h3>
+                })}
+            </div>
         </div>
     )
 }
