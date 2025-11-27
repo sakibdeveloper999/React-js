@@ -4,12 +4,14 @@ import axios from 'axios';
 
 
 const Api = () => {
+    const [data, setData] = useState([])
 
     // API calling use fetch and async function
     const getData = async () => {
         const response = await fetch('https://jsonplaceholder.typicode.com/users');
-        const data = await response.json()
+        const JsonData = await response.json()
 
+        setData(JsonData)
         //console.log(data);
 
 
@@ -55,7 +57,20 @@ const Api = () => {
             >
                 Get Data Axios
             </button>
-            {/* this div show if you click the "Get Data Axios "  */}
+            {/* this div show if you click the "Get Data Fetch " Button */}
+            <div className="fetchApi">
+                {data.map(function(user){
+                    return <div className=' bg-gray-300 p-5 '>
+                        
+                    <h1 className='font-bold '>Name: {user.name}</h1>
+                    <h2 className='font-bold'>Id: {user.id} </h2>
+                    <h3 className='font-bold'>Username: {user.username}</h3>
+                    <h4 className='font-bold'>Email: {user.email}</h4>
+                    
+                    </div>
+                })}
+            </div>
+            {/* this div show if you click the "Get Data Axios " Button */}
             <div className="axiosApi">
                 {dataTow.map(function(elem, idx){
                     return <h3>hello {elem.author} {idx}</h3>
