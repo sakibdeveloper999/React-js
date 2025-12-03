@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link } from 'react-router'
+import Hero from '../assets/hero.png'
 const Navbar = () => {
   return (
     <>
