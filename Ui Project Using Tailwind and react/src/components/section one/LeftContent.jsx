@@ -19,5 +19,5 @@ const LeftContent = () => {
         </div>
     )
 }
- 
+
 export default LeftContent

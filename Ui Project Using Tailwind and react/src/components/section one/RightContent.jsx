@@ -70,9 +70,9 @@ const RightContent = () => {
   ]
   return (
     <div className='flex overflow-x-auto flex-nowrap w-2/3 p-6 gap-4 '>
-        {card.map((card) => (
-          <Card id={card.id} title={card.title} description={card.description} image={card.image} tags={card.tags} />
-        ))}
+      {card.map((card) => (
+        <Card id={card.id} title={card.title} description={card.description} image={card.image} tags={card.tags} />
+      ))}
     </div>
   )
 }
