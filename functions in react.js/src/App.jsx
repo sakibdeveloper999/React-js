@@ -1,8 +1,11 @@
 import React from 'react'
+import NormalFunction from './components/NormalFunction'
 
 const App = () => {
   return (
-    <div>App</div>
+    <>
+     <NormalFunction/>
+    </>
   )
 }
 
